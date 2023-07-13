@@ -11,15 +11,18 @@
         "prettier": "prettier --write ."
     },
     "dependencies": {
+        "@reduxjs/toolkit": "^1.9.5",
         "expo": "^49.0.3",
         "expo-status-bar": "~1.4.4",
         "prettier": "^3.0.0",
         "react": "18.2.0",
-        "react-native": "0.71.8"
+        "react-native": "0.71.8",
+        "react-redux": "^8.1.1"
     },
     "devDependencies": {
         "@babel/core": "^7.20.0",
         "@types/react": "~18.0.14",
+        "@types/react-redux": "^7.1.25",
         "typescript": "^4.9.4"
     },
     "private": true
