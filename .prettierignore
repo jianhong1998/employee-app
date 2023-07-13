@@ -1,0 +1,13 @@
+# Don't touch modules
+**/node_modules
+./.expo
+./assets
+
+# Config files
+babel.config.js
+app.json
+package-lock.json
+tsconfig.json
+
+*.js
+
