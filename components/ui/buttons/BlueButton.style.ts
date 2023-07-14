@@ -19,4 +19,7 @@ export default StyleSheet.create({
         color: colorCode.blue[800],
         fontWeight: '700',
     },
+    buttonContainer: {
+        alignSelf: 'center',
+    },
 });

@@ -15,6 +15,7 @@ import RootStackParamList, {
     HomeScreenNavigationProp,
 } from './models/navigation/rootStackParamList';
 import colorCode from './constants/colorCode';
+import AddEmployeeButton from './components/ui/buttons/AddEmployeeButton.component';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -46,6 +47,7 @@ export default function App() {
                         component={HomeScreen}
                         options={{
                             title: 'Employees',
+                            headerRight: () => <AddEmployeeButton />,
                         }}
                     />
                     <Stack.Screen
