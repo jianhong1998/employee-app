@@ -71,6 +71,8 @@ const colorCode = {
         '800': '#424242',
         '900': '#212121',
     },
+    white: '#ffffff',
+    black: '#000000',
 };
 
 export default colorCode;

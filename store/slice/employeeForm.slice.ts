@@ -7,7 +7,7 @@ export interface EmployeeFormSliceState {
     formMode: EmployeeFormMode | null;
     id: EmployeeId | null;
     name: string | null;
-    salary: number | null;
+    salary: string | null;
     department: EmployeeDepartment | null;
 }
 
@@ -40,21 +40,21 @@ const setFormData = (
 
 const changeName = (
     state: EmployeeFormSliceState,
-    action: PayloadAction<string>,
+    action: PayloadAction<string | null>,
 ) => {
     state.name = action.payload;
 };
 
 const changeSalary = (
     state: EmployeeFormSliceState,
-    action: PayloadAction<number>,
+    action: PayloadAction<string | null>,
 ) => {
     state.salary = action.payload;
 };
 
 const changeDepartment = (
     state: EmployeeFormSliceState,
-    action: PayloadAction<EmployeeDepartment>,
+    action: PayloadAction<EmployeeDepartment | null>,
 ) => {
     state.department = action.payload;
 };

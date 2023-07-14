@@ -3,12 +3,21 @@ import styles from './AddEmployeeButton.style';
 import { FC, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import colorCode from '../../../constants/colorCode';
 import { useNavigation } from '@react-navigation/native';
 import { HomeScreenNavigationProp } from '../../../models/navigation/rootStackParamList';
 import PageName from '../../../models/navigation/pageName.enum';
+import { useAppDispatch } from '../../../store/index.store';
+import {
+    EmployeeFormSliceState,
+    employeeFormSliceActions,
+} from '../../../store/slice/employeeForm.slice';
+import EmployeeFormMode from '../../../models/employeeForm/formMode.enum';
 
 const AddEmployeeButton: FC = () => {
+    const dispatch = useAppDispatch();
+
+    const { setFormData } = employeeFormSliceActions;
+
     const [isPressed, setIsPressed] = useState<boolean>(false);
 
     const { navigate } =
@@ -23,6 +32,16 @@ const AddEmployeeButton: FC = () => {
     };
 
     const onPressHandler = () => {
+        const state: EmployeeFormSliceState = {
+            formMode: EmployeeFormMode.NEW,
+            id: null,
+            name: null,
+            salary: null,
+            department: null,
+        };
+
+        dispatch(setFormData(state));
+
         navigate(PageName.EMPLOYEE_FORM);
     };
 

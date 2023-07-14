@@ -54,7 +54,7 @@ export default function App() {
                         name={PageName.EMPLOYEE_FORM}
                         component={EmployeeFormScreen}
                         options={{
-                            title: '',
+                            title: 'Add Employee',
                         }}
                     />
                 </Stack.Navigator>
