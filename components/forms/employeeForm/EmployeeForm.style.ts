@@ -5,6 +5,7 @@ export default StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'stretch',
+        gap: 10,
     },
     label: {
         fontSize: 18,
@@ -12,7 +13,7 @@ export default StyleSheet.create({
         fontWeight: '700',
     },
     submitButtonContainer: {
-        marginTop: 100,
+        marginTop: 30,
     },
     dropdownContainer: {
         zIndex: 1,
