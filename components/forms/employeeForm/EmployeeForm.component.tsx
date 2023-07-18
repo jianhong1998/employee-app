@@ -1,15 +1,16 @@
 import styles from './EmployeeForm.style';
 
 import { FC, useEffect } from 'react';
-import { Alert, Text, TextInput, View } from 'react-native';
-import { useAppDispatch, useAppSelector } from '../../store/index.store';
+import { Alert, Text, View } from 'react-native';
+import { useAppDispatch, useAppSelector } from '../../../store/index.store';
 import { useNavigation } from '@react-navigation/native';
-import { EmployeeFormScreenNavigationProp } from '../../models/navigation/rootStackParamList';
-import PageName from '../../models/navigation/pageName.enum';
-import { employeeFormSliceActions } from '../../store/slice/employeeForm.slice';
-import EmployeeDepartmentDropdown from '../ui/dropdown/EmployeeDepartmentDropdown.component';
-import BlueButton from '../ui/buttons/BlueButton.component';
-import EmployeeFormMode from '../../models/employeeForm/formMode.enum';
+import { EmployeeFormScreenNavigationProp } from '../../../models/navigation/rootStackParamList';
+import PageName from '../../../models/navigation/pageName.enum';
+import { employeeFormSliceActions } from '../../../store/slice/employeeForm.slice';
+import EmployeeDepartmentDropdown from '../../ui/dropdown/EmployeeDepartmentDropdown.component';
+import BlueButton from '../../ui/buttons/generalButton/BlueButton.component';
+import EmployeeFormMode from '../../../models/employeeForm/formMode.enum';
+import UserInput from '../../ui/userInput/UserInput.component';
 
 const EmployeeForm: FC = () => {
     const { formMode, id, name, salary, department } = useAppSelector(
@@ -94,22 +95,20 @@ const EmployeeForm: FC = () => {
         <View style={styles.container}>
             <View>
                 <Text style={styles.label}>Name</Text>
-                <TextInput
-                    style={styles.textInput}
+                <UserInput
                     value={name || ''}
-                    onChangeText={nameInputOnChangeHandler}
-                    autoCapitalize="none"
+                    onChangeHanlder={nameInputOnChangeHandler}
+                    autoFocus={true}
                 />
             </View>
             <View>
                 <Text style={styles.label}>Salary</Text>
-                <TextInput
-                    style={styles.textInput}
+                <UserInput
                     value={salary?.toString() || ''}
-                    onChangeText={salaryInputOnChangeHandler}
+                    onChangeHanlder={salaryInputOnChangeHandler}
                 />
             </View>
-            <View>
+            <View style={styles.dropdownContainer}>
                 <Text style={styles.label}>Department</Text>
                 <EmployeeDepartmentDropdown />
             </View>

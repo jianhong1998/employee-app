@@ -4,14 +4,14 @@ import { FC, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { HomeScreenNavigationProp } from '../../../models/navigation/rootStackParamList';
-import PageName from '../../../models/navigation/pageName.enum';
-import { useAppDispatch } from '../../../store/index.store';
+import { HomeScreenNavigationProp } from '../../../../models/navigation/rootStackParamList';
+import PageName from '../../../../models/navigation/pageName.enum';
+import { useAppDispatch } from '../../../../store/index.store';
 import {
     EmployeeFormSliceState,
     employeeFormSliceActions,
-} from '../../../store/slice/employeeForm.slice';
-import EmployeeFormMode from '../../../models/employeeForm/formMode.enum';
+} from '../../../../store/slice/employeeForm.slice';
+import EmployeeFormMode from '../../../../models/employeeForm/formMode.enum';
 
 const AddEmployeeButton: FC = () => {
     const dispatch = useAppDispatch();

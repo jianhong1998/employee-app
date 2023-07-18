@@ -17,6 +17,15 @@ type EmployeeFormScreenNavigationProp = NativeStackScreenProps<
     PageName.EMPLOYEE_FORM
 >;
 
+type UserFormScreenNavigationProp = NativeStackScreenProps<
+    RootStackParamList,
+    PageName.USER_FORM
+>;
+
 export default RootStackParamList;
 
-export { HomeScreenNavigationProp, EmployeeFormScreenNavigationProp };
+export {
+    HomeScreenNavigationProp,
+    EmployeeFormScreenNavigationProp,
+    UserFormScreenNavigationProp,
+};
