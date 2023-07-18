@@ -13,6 +13,7 @@ import RootStackParamList from './models/navigation/rootStackParamList';
 import colorCode from './constants/colorCode';
 import AddEmployeeButton from './components/ui/buttons/employeeButton/AddEmployeeButton.component';
 import UserFormScreen from './screens/UserForm.screen';
+import LogoutButton from './components/ui/buttons/logoutButton/LogoutButton.component';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -45,6 +46,7 @@ export default function App() {
                         options={{
                             title: 'Employees',
                             headerRight: () => <AddEmployeeButton />,
+                            headerLeft: () => <LogoutButton />,
                         }}
                     />
                     <Stack.Screen

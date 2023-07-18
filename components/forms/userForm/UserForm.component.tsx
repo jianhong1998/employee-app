@@ -44,8 +44,6 @@ const UserForm: FC = () => {
         dispatch(setReEnteredPassword(changedInput));
     };
 
-    // const departmentInputOnChangeHandler = (changedInput: string) => {};
-
     const loginButtonOnPressHandler = () => {
         console.log('login');
     };
