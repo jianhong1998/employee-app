@@ -1,14 +1,14 @@
-import styles from './BlueButton.style';
+import styles from './RedButton.style';
 
 import { FC, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 
-interface BlueButtonProps {
+interface RedButtonProps {
     title: string;
     onPressHandler: () => void;
 }
 
-const BlueButton: FC<BlueButtonProps> = ({ title, onPressHandler }) => {
+const RedButton: FC<RedButtonProps> = ({ title, onPressHandler }) => {
     const [isPressed, setIsPressed] = useState<boolean>(false);
 
     const onPressInHandler = () => {
@@ -37,4 +37,4 @@ const BlueButton: FC<BlueButtonProps> = ({ title, onPressHandler }) => {
     );
 };
 
-export default BlueButton;
+export default RedButton;
