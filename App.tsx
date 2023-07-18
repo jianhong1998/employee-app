@@ -1,8 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './store/index.store';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import {
     NativeStackNavigationOptions,
     createNativeStackNavigator,
@@ -10,12 +9,11 @@ import {
 import HomeScreen from './screens/Home.screen';
 import PageName from './models/navigation/pageName.enum';
 import EmployeeFormScreen from './screens/EmployeeForm.screen';
-import BlueButton from './components/ui/buttons/BlueButton.component';
-import RootStackParamList, {
-    HomeScreenNavigationProp,
-} from './models/navigation/rootStackParamList';
+import RootStackParamList from './models/navigation/rootStackParamList';
 import colorCode from './constants/colorCode';
-import AddEmployeeButton from './components/ui/buttons/AddEmployeeButton.component';
+import AddEmployeeButton from './components/ui/buttons/employeeButton/AddEmployeeButton.component';
+import UserFormScreen from './screens/UserForm.screen';
+import LogoutButton from './components/ui/buttons/logoutButton/LogoutButton.component';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -48,6 +46,7 @@ export default function App() {
                         options={{
                             title: 'Employees',
                             headerRight: () => <AddEmployeeButton />,
+                            headerLeft: () => <LogoutButton />,
                         }}
                     />
                     <Stack.Screen
@@ -55,6 +54,13 @@ export default function App() {
                         component={EmployeeFormScreen}
                         options={{
                             title: 'Add Employee',
+                        }}
+                    />
+                    <Stack.Screen
+                        name={PageName.USER_FORM}
+                        component={UserFormScreen}
+                        options={{
+                            title: '',
                         }}
                     />
                 </Stack.Navigator>

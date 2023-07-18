@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
-import colorCode from '../../../constants/colorCode';
+import colorCode from '../../../../constants/colorCode';
 
 export default StyleSheet.create({
     button: {
-        borderColor: colorCode.red['700'],
+        borderColor: colorCode.green['700'],
         borderWidth: 2,
         borderRadius: 10,
         paddingHorizontal: 20,
@@ -15,10 +15,10 @@ export default StyleSheet.create({
         backgroundColor: colorCode.white,
     },
     pressedButton: {
-        backgroundColor: colorCode.red['200'],
+        backgroundColor: colorCode.green['200'],
     },
     title: {
-        color: colorCode.red[800],
+        color: colorCode.green['800'],
         fontWeight: '700',
     },
     buttonContainer: {

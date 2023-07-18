@@ -1,14 +1,14 @@
 import { FC, useState } from 'react';
-import Employee from '../../../models/employee.model';
 import { Pressable } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { HomeScreenNavigationProp } from '../../../models/navigation/rootStackParamList';
-import PageName from '../../../models/navigation/pageName.enum';
-import { useAppDispatch } from '../../../store/index.store';
-import { employeeFormSliceActions } from '../../../store/slice/employeeForm.slice';
-import EmployeeFormMode from '../../../models/employeeForm/formMode.enum';
-import colorCode from '../../../constants/colorCode';
+import colorCode from '../../../../constants/colorCode';
+import Employee from '../../../../models/employee.model';
+import EmployeeFormMode from '../../../../models/employeeForm/formMode.enum';
+import PageName from '../../../../models/navigation/pageName.enum';
+import { HomeScreenNavigationProp } from '../../../../models/navigation/rootStackParamList';
+import { useAppDispatch } from '../../../../store/index.store';
+import { employeeFormSliceActions } from '../../../../store/slice/employeeForm.slice';
 
 interface EditEmployeeButtonProps {
     employee: Employee;

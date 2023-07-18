@@ -3,8 +3,8 @@ import styles from './EmployeeCard.style';
 import { FC } from 'react';
 import Employee from '../../../models/employee.model';
 import { Text, View } from 'react-native';
-import EditEmployeeButton from '../../ui/buttons/EditEmployeeButton.component';
-import DeleteEmployeeButton from '../../ui/buttons/DeleteEmployeeButton.component';
+import DeleteEmployeeButton from '../../ui/buttons/employeeButton/DeleteEmployeeButton.component';
+import EditEmployeeButton from '../../ui/buttons/employeeButton/EditEmployeeButton.component';
 
 interface EmployeeCardProps {
     employee: Employee;

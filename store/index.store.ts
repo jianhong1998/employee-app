@@ -4,12 +4,14 @@ import { useSelector } from 'react-redux';
 import employeeSlice from './slice/employee.slice';
 import employeeFormSlice from './slice/employeeForm.slice';
 import popupsSlice from './slice/popups.slice';
+import userFormSlice from './slice/userForm.slice';
 
 const store = configureStore({
     reducer: {
         employeeSlice: employeeSlice.reducer,
         employeeFormSlice: employeeFormSlice.reducer,
         popupsSlice: popupsSlice.reducer,
+        userFormSlice: userFormSlice.reducer,
     },
 });
 

@@ -2,33 +2,36 @@ import styles from './EmployeeDepartmentDropdown.style';
 
 import { FC, useState } from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
-import EmployeeDepartment from '../../../models/employeeDepartment.enum';
 import DropdownItemData from '../../../models/dropdown/dropdownItemData.model';
-import { useAppDispatch, useAppSelector } from '../../../store/index.store';
-import { employeeFormSliceActions } from '../../../store/slice/employeeForm.slice';
+import { useAppSelector, useAppDispatch } from '../../../store/index.store';
+import UserDepartment from '../../../models/userForm/userDepartment.enum';
+import { userFormSliceActions } from '../../../store/slice/userForm.slice';
 
-const EmployeeDepartmentDropdown: FC = () => {
-    const { department } = useAppSelector((state) => state.employeeFormSlice);
+const UserDepartmentDropdown: FC = () => {
+    const { department } = useAppSelector((state) => state.userFormSlice);
 
     const [isDropdownPickerOpen, setIsDropdownPickerOpen] =
         useState<boolean>(false);
 
-    const [dropdownValue, setDropdownValue] =
-        useState<EmployeeDepartment | null>(department);
+    const [dropdownValue, setDropdownValue] = useState<UserDepartment | null>(
+        department,
+    );
 
     const dispatch = useAppDispatch();
 
-    const { changeDepartment } = employeeFormSliceActions;
+    const { setDepartment } = userFormSliceActions;
 
-    const items = Object.entries(EmployeeDepartment).map(([key, value]) => {
+    const items = Object.entries(UserDepartment).map(([key, value]) => {
         return {
             label: key,
             value,
-        } as DropdownItemData<EmployeeDepartment>;
+        } as DropdownItemData<UserDepartment>;
     });
 
     const onChangeHandler = () => {
-        dispatch(changeDepartment(dropdownValue));
+        if (dropdownValue) {
+            dispatch(setDepartment(dropdownValue));
+        }
     };
 
     return (
@@ -46,4 +49,4 @@ const EmployeeDepartmentDropdown: FC = () => {
     );
 };
 
-export default EmployeeDepartmentDropdown;
+export default UserDepartmentDropdown;

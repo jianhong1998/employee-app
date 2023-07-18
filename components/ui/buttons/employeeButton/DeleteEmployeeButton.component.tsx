@@ -1,10 +1,10 @@
 import { FC, useState } from 'react';
-import Employee from '../../../models/employee.model';
-import { Pressable } from 'react-native';
-import { useAppDispatch } from '../../../store/index.store';
 import { AntDesign } from '@expo/vector-icons';
-import colorCode from '../../../constants/colorCode';
-import { popupsSliceActions } from '../../../store/slice/popups.slice';
+import { Pressable } from 'react-native';
+import colorCode from '../../../../constants/colorCode';
+import Employee from '../../../../models/employee.model';
+import { useAppDispatch } from '../../../../store/index.store';
+import { popupsSliceActions } from '../../../../store/slice/popups.slice';
 
 interface DeleteEmployeeButtonProps {
     employee: Employee;

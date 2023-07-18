@@ -2,10 +2,11 @@ import styles from './DeleteEmployeePopup.style';
 
 import { FC } from 'react';
 import { Modal, Text, View } from 'react-native';
-import BlueButton from '../../ui/buttons/BlueButton.component';
+import BlueButton from '../../ui/buttons/generalButton/BlueButton.component';
 import { useAppDispatch, useAppSelector } from '../../../store/index.store';
-import RedButton from '../../ui/buttons/RedButton.component';
+
 import { popupsSliceActions } from '../../../store/slice/popups.slice';
+import RedButton from '../../ui/buttons/generalButton/RedButton.component';
 
 const DeleteEmployeePopup: FC = () => {
     const { isOpen, employeeId, employeeName } = useAppSelector(

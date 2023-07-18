@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import colorCode from '../../../constants/colorCode';
+import colorCode from '../../../../constants/colorCode';
 
 export default StyleSheet.create({
     icon: {
