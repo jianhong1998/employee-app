@@ -1,19 +1,22 @@
 import { FC } from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { HomeScreenNavigationProp } from '../models/navigation/rootStackParamList';
+import { View } from 'react-native';
+import EmployeeCardList from '../components/employeeCardList/EmployeeCardList.component';
+import DeleteEmployeePopup from '../components/popups/deleteEmployeePopup/DeleteEmployeePopup.component';
 
 const HomeScreen: FC = () => {
-    const { navigate } =
-        useNavigation<HomeScreenNavigationProp['navigation']>();
-
     return (
-        <View
-            style={{
-                flexDirection: 'row',
-                justifyContent: 'flex-end',
-            }}
-        ></View>
+        <>
+            <View
+                style={{
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    padding: 10,
+                }}
+            >
+                <EmployeeCardList />
+            </View>
+            <DeleteEmployeePopup />
+        </>
     );
 };
 
